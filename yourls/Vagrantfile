@@ -2,14 +2,14 @@ Vagrant.require_version ">= 2.2.15"
 
 $mysql_install = <<-SCRIPT
   apt update && \
-  apt upgrade && \
+  apt upgrade -y && \
   apt install -y mysql-server mysql python3-pip unzip && \
   apt autoremove -y
 SCRIPT
 
 $nginx_install = <<-SCRIPT
   apt update && \
-  apt upgrade && \
+  apt upgrade -y && \
   apt install -y nginx php-fpm php-fpm-mysql php-curl python3-pip unzip && \
   apt autoremove -y
 SCRIPT
