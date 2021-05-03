@@ -10,7 +10,7 @@ SCRIPT
 $nginx_install = <<-SCRIPT
   apt update && \
   apt upgrade -y && \
-  apt install -y nginx php-fpm php-fpm-mysql php-curl python3-pip unzip && \
+  apt install -y nginx php-fpm php-mysql php-curl python3-pip unzip && \
   apt autoremove -y
 SCRIPT
 
