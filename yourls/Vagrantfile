@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
     mysql.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
     mysql.vm.provision "shell", inline: $mysql_install
     mysql.vm.synced_folder "./mysql_files", "/opt/mysql_files"
-    mysql.vm.provision "shell", inline: "mysql -sfu < /opt/mysql_files/mysql_install.sql"
+    mysql.vm.provision "shell", inline: "mysql -sfu root < /opt/mysql_files/mysql_install.sql"
   end
 
 #Nginx YoURLS
