@@ -20,6 +20,10 @@ Vagrant.configure("2") do |config|
 
 #MySQL YoURLS
   config.vm.define "mysqldb" do |mysql|
+    mysql.name = "mysql-db01"
+    mysql.memory = 1024
+    mysql.cpu = 1
+    mysql.vm.hostname = "mysql-db01.rcarj.eu"
     mysql.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
     mysql.vm.provision "shell", inline: $mysql_install
     mysql.vm.synced_folder "./mysql_files", "/opt/mysql_files"
@@ -28,6 +32,10 @@ Vagrant.configure("2") do |config|
 
 #Nginx YoURLS
   config.vm.define "nginx" do |nginx|
+    nginx.name = "nginx-web01"
+    nginx.memory = 512
+    nginx.cpu = 1
+    nginx.vm.hostname = "nginx-web01.rcarj.eu"
     nginx.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
     nginx.vm.provision "shell", inline: $nginx_install
     nginx.vm.synced_folder "./nginx_files", "/opt/nginx_files"
